@@ -10,3 +10,4 @@ C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net10.0\GolBet.Services
 C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net10.0\refint\GolBet.Services.dll
 C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net10.0\GolBet.Services.pdb
 C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net10.0\ref\GolBet.Services.dll
+C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net10.0\GolBet.S.3F33BCC3.Up2Date
