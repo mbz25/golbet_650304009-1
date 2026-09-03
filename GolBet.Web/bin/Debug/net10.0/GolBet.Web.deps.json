@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v10.0": {
       "GolBet.Web/1.0.0": {
         "dependencies": {
+          "GolBet.Entities": "1.0.0",
           "GolBet.Repositories": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "8.0.11"
         },

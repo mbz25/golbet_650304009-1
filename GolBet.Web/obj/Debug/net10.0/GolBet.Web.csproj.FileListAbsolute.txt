@@ -207,3 +207,4 @@ C:\reposITM\golbet_650304009-1\GolBet.Web\bin\Debug\net10.0\GolBet.Repositories.
 C:\reposITM\golbet_650304009-1\GolBet.Web\bin\Debug\net10.0\GolBet.Repositories.pdb
 C:\reposITM\golbet_650304009-1\GolBet.Web\bin\Debug\net10.0\GolBet.Entities.pdb
 C:\reposITM\golbet_650304009-1\GolBet.Web\obj\Debug\net10.0\GolBet.Web.csproj.AssemblyReference.cache
+C:\reposITM\golbet_650304009-1\GolBet.Web\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
