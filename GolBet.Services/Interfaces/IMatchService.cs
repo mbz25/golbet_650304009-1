@@ -2,9 +2,9 @@
 
 using AutoMapper;
 using GolBet.Entities.Enums;
-using GolBet.Services.DTOs;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using GolBet.Repositories.Interfaces;
+using GolBet.Services.DTOs; 
+using GolBet.Services.Interfaces;
 
 namespace GolBet.Services.Interfaces;
 

@@ -3,10 +3,8 @@
 using AutoMapper;
 using GolBet.Entities.Enums;
 using GolBet.Repositories.Interfaces;
-using GolBet.Services.DTOs;
+using GolBet.Services.DTOs; 
 using GolBet.Services.Interfaces;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace GolBet.Services.Implementations;
 
