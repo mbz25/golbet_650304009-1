@@ -11,3 +11,4 @@ C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net8.0\refint\GolBet.Se
 C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net8.0\GolBet.Services.pdb
 C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net8.0\ref\GolBet.Services.dll
 C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net8.0\GolBet.S.3F33BCC3.Up2Date
+C:\reposITM\golbet_650304009-1\GolBet.Services\obj\Debug\net8.0\GolBet.Services.csproj.AssemblyReference.cache

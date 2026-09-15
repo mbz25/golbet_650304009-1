@@ -6,4 +6,68 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Include="obj\Debug\net10.0\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net10.0\GolBet.Services.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net10.0\GolBet.Services.GlobalUsings.g.cs" />
+    <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net8.0\GolBet.Services.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net8.0\GolBet.Services.GlobalUsings.g.cs" />
+    <Compile Include="obj\Release\net10.0\.NETCoreApp,Version=v10.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\net10.0\GolBet.Services.AssemblyInfo.cs" />
+    <Compile Include="obj\Release\net10.0\GolBet.Services.GlobalUsings.g.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Debug\net10.0\GolBet.Services.deps.json" />
+    <Content Include="bin\Debug\net8.0\GolBet.Services.deps.json" />
+    <Content Include="obj\Debug\net10.0\GolBet.Services.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net10.0\GolBet.Services.sourcelink.json" />
+    <Content Include="obj\Debug\net8.0\GolBet.Services.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net8.0\GolBet.Services.sourcelink.json" />
+    <Content Include="obj\GolBet.Services.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\net10.0\GolBet.Services.dll" />
+    <None Include="bin\Debug\net10.0\GolBet.Services.pdb" />
+    <None Include="bin\Debug\net8.0\GolBet.Services.dll" />
+    <None Include="bin\Debug\net8.0\GolBet.Services.pdb" />
+    <None Include="obj\Debug\net10.0\GolBet.S.3F33BCC3.Up2Date" />
+    <None Include="obj\Debug\net10.0\GolBet.Services.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net10.0\GolBet.Services.assets.cache" />
+    <None Include="obj\Debug\net10.0\GolBet.Services.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net10.0\GolBet.Services.dll" />
+    <None Include="obj\Debug\net10.0\GolBet.Services.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net10.0\GolBet.Services.pdb" />
+    <None Include="obj\Debug\net10.0\refint\GolBet.Services.dll" />
+    <None Include="obj\Debug\net10.0\ref\GolBet.Services.dll" />
+    <None Include="obj\Debug\net8.0\GolBet.S.3F33BCC3.Up2Date" />
+    <None Include="obj\Debug\net8.0\GolBet.Services.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net8.0\GolBet.Services.assets.cache" />
+    <None Include="obj\Debug\net8.0\GolBet.Services.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net8.0\GolBet.Services.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net8.0\GolBet.Services.dll" />
+    <None Include="obj\Debug\net8.0\GolBet.Services.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net8.0\GolBet.Services.pdb" />
+    <None Include="obj\Debug\net8.0\refint\GolBet.Services.dll" />
+    <None Include="obj\Debug\net8.0\ref\GolBet.Services.dll" />
+    <None Include="obj\GolBet.Services.csproj.nuget.g.props" />
+    <None Include="obj\GolBet.Services.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\Release\net10.0\GolBet.Services.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\net10.0\GolBet.Services.GeneratedMSBuildEditorConfig.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Release\net10.0\" />
+    <Folder Include="obj\Release\net10.0\refint\" />
+    <Folder Include="obj\Release\net10.0\ref\" />
+  </ItemGroup>
+
 </Project>

@@ -10,3 +10,4 @@ C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net10.0\GolBet.Entities
 C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net10.0\refint\GolBet.Entities.dll
 C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net10.0\GolBet.Entities.pdb
 C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net10.0\ref\GolBet.Entities.dll
+C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net10.0\GolBet.E.FAA7ECB7.Up2Date
