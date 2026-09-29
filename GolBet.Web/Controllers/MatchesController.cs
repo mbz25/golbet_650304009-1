@@ -37,7 +37,7 @@ public class MatchesController : Controller
     public async Task<IActionResult> Create()
     {
         ViewBag.Teams = new SelectList(await _teamService.GetAllAsync(), "Id", "Name");
-        return View();
+        return View(new MatchFormDto()); // <-- Solución: Instancia vacía para que Model no sea null
     }
 
     [HttpPost]

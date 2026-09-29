@@ -1,3 +1,4 @@
+// GolBet.Web/Program.cs
 using System.Globalization;
 using GolBet.Repositories.Data;
 using GolBet.Repositories.Implementations;
@@ -54,13 +55,18 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
-// Ejecutar el Seeder al iniciar la aplicación
+// Ejecutar migraciones y el Seeder al iniciar la aplicación
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
     try
     {
         var context = services.GetRequiredService<GolBet.Repositories.Data.AppDbContext>();
+
+        // Aplica las migraciones automáticamente para crear las tablas
+        context.Database.Migrate();
+
+        // Llena los datos de prueba
         await GolBet.Repositories.Data.DbSeeder.SeedAsync(context);
     }
     catch (Exception ex)
@@ -71,4 +77,3 @@ using (var scope = app.Services.CreateScope())
 }
 
 app.Run();
-
