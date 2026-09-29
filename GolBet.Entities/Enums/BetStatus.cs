@@ -1,4 +1,5 @@
-﻿namespace GolBet.Entities.Enums;
+﻿// GolBet.Entities/Enums/BetStatus.cs 
+namespace GolBet.Entities.Enums;
 
 public enum BetStatus
 {

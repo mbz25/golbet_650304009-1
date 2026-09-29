@@ -9,7 +9,10 @@
     var current = (MatchStatus?)ViewBag.CurrentStatus;
 }
 
-<h2 class="mb-4">⚽ Cartelera de partidos</h2>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>⚽ Cartelera de partidos</h2>
+    <a asp-action="Create" class="btn btn-success">+ Nuevo partido</a>
+</div>
 
 @* Botonera de Filtros *@
 <div class="d-flex gap-2 flex-wrap mb-4">
@@ -38,7 +41,7 @@
             <div class="card h-100 shadow-sm">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <small class="text-muted">
-                        📅 @match.Date.ToColombiaTime().ToString("ddd dd MMM · h:mm tt")
+                        📅 @match.Date.ToColombiaTime().ToString("ddd dd MMM • h:mm tt")
                     </small>
                     @switch (match.Status)
                     {
@@ -85,19 +88,19 @@
                     <div class="row g-2 text-center mb-2">
                         <div class="col">
                             <div class="border rounded py-1">
-                                <small class="text-muted d-block">1 · Local</small>
+                                <small class="text-muted d-block">1 • Local</small>
                                 <span class="fw-bold">@match.HomeOdds.ToString("0.00")</span>
                             </div>
                         </div>
                         <div class="col">
                             <div class="border rounded py-1">
-                                <small class="text-muted d-block">X · Empate</small>
+                                <small class="text-muted d-block">X • Empate</small>
                                 <span class="fw-bold">@match.DrawOdds.ToString("0.00")</span>
                             </div>
                         </div>
                         <div class="col">
                             <div class="border rounded py-1">
-                                <small class="text-muted d-block">2 · Visitante</small>
+                                <small class="text-muted d-block">2 • Visitante</small>
                                 <span class="fw-bold">@match.AwayOdds.ToString("0.00")</span>
                             </div>
                         </div>

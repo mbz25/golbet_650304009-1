@@ -1,0 +1,36 @@
+@model GolBet.Services.DTOs.TeamFormDto
+
+@{
+    ViewData["Title"] = "Editar Equipo";
+}
+
+<h2 class="mb-4">Editar Equipo</h2>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+        <form asp-action="Edit" method="post">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="mb-3">
+                <label asp-for="Name" class="form-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CrestUrl" class="form-label"></label>
+                <input asp-for="CrestUrl" class="form-control" />
+                <span asp-validation-for="CrestUrl" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

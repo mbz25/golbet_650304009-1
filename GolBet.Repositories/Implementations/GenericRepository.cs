@@ -1,3 +1,5 @@
+// GolBet.Repositories/Implementations/GenericRepository.cs 
+
 using GolBet.Entities.Common;
 
 using GolBet.Repositories.Data;

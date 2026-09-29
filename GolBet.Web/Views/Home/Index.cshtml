@@ -1,54 +1,17 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GolBet.Web</title>
-    <script type="importmap"></script>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GolBet.Web.styles.css" asp-append-version="true" />
-</head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-success border-bottom mb-3">
-            <div class="container">
-                <a class="navbar-brand fw-bold" asp-controller="Home" asp-action="Index">
-                    ⚽ GolBet
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarMain">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarMain">
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="Matches" asp-action="Index">Partidos</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
 
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+<div class="p-5 mb-4 bg-light rounded-3 shadow-sm border">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold text-success">⚽ Bienvenido a GolBet</h1>
+        <p class="col-md-8 fs-4 text-secondary">
+            Tu plataforma de simulación académica para gestionar partidos, equipos y pronósticos deportivos de manera ágil y moderna.
+        </p>
+        <hr class="my-4">
+        <p>Explora el tablero de partidos o administra los equipos disponibles desde la barra de navegación.</p>
+        <a class="btn btn-success btn-lg" asp-controller="Matches" asp-action="Index" role="button">
+            Ver Partidos ➔
+        </a>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; @DateTime.Now.Year - GolBet · Simulador académico
-        </div>
-    </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-</body>
-</html>
+</div>

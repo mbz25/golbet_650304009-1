@@ -152,3 +152,4 @@ C:\reposITM\golbet_650304009-1\GolBet.Web\obj\Debug\net8.0\refint\GolBet.Web.dll
 C:\reposITM\golbet_650304009-1\GolBet.Web\obj\Debug\net8.0\GolBet.Web.pdb
 C:\reposITM\golbet_650304009-1\GolBet.Web\obj\Debug\net8.0\GolBet.Web.genruntimeconfig.cache
 C:\reposITM\golbet_650304009-1\GolBet.Web\obj\Debug\net8.0\ref\GolBet.Web.dll
+C:\reposITM\golbet_650304009-1\GolBet.Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

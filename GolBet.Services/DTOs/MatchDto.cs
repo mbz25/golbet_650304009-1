@@ -1,6 +1,7 @@
 // GolBet.Services/DTOs/MatchDto.cs 
 
 using GolBet.Entities.Enums;
+using System;
 
 
 

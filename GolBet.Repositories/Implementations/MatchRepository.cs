@@ -1,21 +1,11 @@
 using GolBet.Entities;
-
 using GolBet.Entities.Enums;
-
 using GolBet.Repositories.Data;
-
 using GolBet.Repositories.Interfaces;
-
 using Microsoft.EntityFrameworkCore;
-
-
-
 namespace GolBet.Repositories.Implementations;
 
-
-
 public class MatchRepository : GenericRepository<Match>, IMatchRepository
-
 {
 
     public MatchRepository(AppDbContext context) : base(context) { }
@@ -28,15 +18,15 @@ public class MatchRepository : GenericRepository<Match>, IMatchRepository
 
         var query = _dbSet
 
-            .Include(m => m.HomeTeam)
+        .Include(m => m.HomeTeam)
 
-            .Include(m => m.AwayTeam)
+        .Include(m => m.AwayTeam)
 
-            .Where(m => m.IsActive)
+        .Where(m => m.IsActive)
 
-            .AsNoTracking()
+        .AsNoTracking()
 
-            .AsQueryable();
+        .AsQueryable();
 
 
 
@@ -54,16 +44,15 @@ public class MatchRepository : GenericRepository<Match>, IMatchRepository
 
     public async Task<Match?> GetByIdWithDetailsAsync(int id)
 
-        => await _dbSet
+    => await _dbSet
 
-            .Include(m => m.HomeTeam)
+    .Include(m => m.HomeTeam)
 
-            .Include(m => m.AwayTeam)
+    .Include(m => m.AwayTeam)
 
-            .Include(m => m.Bets)
+    .Include(m => m.Bets)
 
-            .AsNoTracking()
+    .AsNoTracking()
 
-            .FirstOrDefaultAsync(m => m.Id == id);
-
+    .FirstOrDefaultAsync(m => m.Id == id);
 }

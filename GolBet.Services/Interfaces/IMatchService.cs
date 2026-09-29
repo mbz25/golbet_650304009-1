@@ -2,9 +2,9 @@
 
 using AutoMapper;
 using GolBet.Entities.Enums;
-using GolBet.Repositories.Interfaces;
-using GolBet.Services.DTOs; 
-using GolBet.Services.Interfaces;
+using GolBet.Services.DTOs;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GolBet.Services.Interfaces;
 
@@ -14,4 +14,10 @@ public interface IMatchService
     Task<IEnumerable<MatchDto>> GetBoardAsync(MatchStatus? status = null);
 
     Task<MatchDetailDto?> GetDetailAsync(int id);
+
+    // --- Métodos de escritura agregados para el Módulo 6 ---
+    Task<MatchFormDto?> GetForEditAsync(int id);
+    Task CreateAsync(MatchFormDto dto);
+    Task UpdateAsync(MatchFormDto dto);
+    Task DeactivateAsync(int id);
 }
