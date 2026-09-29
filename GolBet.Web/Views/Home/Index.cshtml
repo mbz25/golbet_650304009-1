@@ -1,17 +1,19 @@
 ﻿@{
-    ViewData["Title"] = "Inicio";
+    ViewData["Title"] = "Bienvenido a GolBet";
 }
 
-<div class="p-5 mb-4 bg-light rounded-3 shadow-sm border">
-    <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold text-success">⚽ Bienvenido a GolBet</h1>
-        <p class="col-md-8 fs-4 text-secondary">
-            Tu plataforma de simulación académica para gestionar partidos, equipos y pronósticos deportivos de manera ágil y moderna.
-        </p>
-        <hr class="my-4">
-        <p>Explora el tablero de partidos o administra los equipos disponibles desde la barra de navegación.</p>
-        <a class="btn btn-success btn-lg" asp-controller="Matches" asp-action="Index" role="button">
-            Ver Partidos ➔
+<div class="text-center mt-5">
+    <h1 class="display-5 fw-bold text-success mb-3">⚽ Bienvenido a GolBet</h1>
+
+    <p class="text-secondary fs-5 mb-4">
+        El simulador de apuestas de fútbol donde arriesgas FutCoins, no dinero.
+    </p>
+
+    <div>
+        <a class="btn btn-success btn-lg px-4 py-2" asp-controller="Matches" asp-action="Index">
+            Ver partidos
         </a>
     </div>
 </div>
+
+ 
