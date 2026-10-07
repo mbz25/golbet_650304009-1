@@ -11,3 +11,4 @@ C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net8.0\refint\GolBet.En
 C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net8.0\GolBet.Entities.pdb
 C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net8.0\ref\GolBet.Entities.dll
 C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net8.0\GolBet.E.FAA7ECB7.Up2Date
+C:\reposITM\golbet_650304009-1\GolBet.Entities\obj\Debug\net8.0\GolBet.Entities.csproj.AssemblyReference.cache

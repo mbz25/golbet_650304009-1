@@ -1,5 +1,5 @@
 // GolBet.Web/Controllers/TeamsController.cs 
-
+using Microsoft.AspNetCore.Authorization;
 using GolBet.Services.DTOs;
 
 using GolBet.Services.Interfaces;
@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GolBet.Web.Controllers;
 
-
+[Authorize(Roles = "Admin")]
 
 public class TeamsController : Controller
 

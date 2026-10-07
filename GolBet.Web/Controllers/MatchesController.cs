@@ -1,4 +1,6 @@
 // GolBet.Web/Controllers/MatchesController.cs 
+using Microsoft.AspNetCore.Authorization;
+using GolBet.Repositories.Data;
 using GolBet.Entities.Enums;
 using GolBet.Services.DTOs;
 using GolBet.Services.Interfaces;
@@ -34,14 +36,16 @@ public class MatchesController : Controller
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Create()
     {
         ViewBag.Teams = new SelectList(await _teamService.GetAllAsync(), "Id", "Name");
-        return View(new MatchFormDto()); // <-- Solución: Instancia vacía para que Model no sea null
+        return View();
     }
 
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Create(MatchFormDto model)
     {
         if (ModelState.IsValid)
@@ -54,6 +58,7 @@ public class MatchesController : Controller
     }
 
     [HttpGet]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Edit(int id)
     {
         var match = await _matchService.GetForEditAsync(id);
@@ -65,6 +70,7 @@ public class MatchesController : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> Edit(int id, MatchFormDto model)
     {
         if (id != model.Id) return NotFound();
