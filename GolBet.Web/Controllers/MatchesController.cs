@@ -1,10 +1,11 @@
 // GolBet.Web/Controllers/MatchesController.cs 
-using Microsoft.AspNetCore.Authorization;
-using GolBet.Repositories.Data;
 using GolBet.Entities.Enums;
+using GolBet.Repositories.Data;
 using GolBet.Services.DTOs;
 using GolBet.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GolBet.Web.Controllers;
@@ -20,10 +21,12 @@ public class MatchesController : Controller
         _teamService = teamService;
     }
 
-    public async Task<IActionResult> Index(MatchStatus? status)
+    public async Task<IActionResult> Index(MatchStatus? status, string? filterTerm)
     {
         ViewBag.CurrentStatus = status;
-        var board = await _matchService.GetBoardAsync(status);
+        ViewBag.SearchQuery = filterTerm;
+
+        var board = await _matchService.GetBoardAsync(status, filterTerm);
         return View(board);
     }
 
