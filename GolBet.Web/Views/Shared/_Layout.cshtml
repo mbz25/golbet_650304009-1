@@ -1,11 +1,15 @@
-﻿<!DOCTYPE html><html lang="es"><head>
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - GolBet.Web</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GolBet.Web.styles.css" asp-append-version="true" /></head><body>
+    <link rel="stylesheet" href="~/GolBet.Web.styles.css" asp-append-version="true" />
+</head>
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark bg-success border-bottom mb-3">
             <div class="container">
@@ -20,6 +24,12 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Matches" asp-action="Index">Partidos</a>
                         </li>
+                        @if (User.IsInRole("Apostador"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-controller="Bets" asp-action="MyBets">Mis apuestas</a>
+                            </li>
+                        }
                         @if (User.IsInRole("Admin"))
                         {
                             <li class="nav-item">
@@ -42,6 +52,14 @@
             </div>
         }
 
+        @if (TempData["Error"] is string errorMessage)
+        {
+            <div class="alert alert-danger alert-dismissible fade show">
+                ⚠️ @errorMessage
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+        }
+
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -56,4 +74,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)</body></html>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -20,5 +20,10 @@ public class MappingProfile : Profile
         CreateMap<Team, TeamDto>();
         CreateMap<TeamFormDto, Team>().ReverseMap();
         CreateMap<MatchFormDto, Match>().ReverseMap();
+
+        // Nuevos mapeos del Módulo 8
+        CreateMap<Bet, BetDto>()
+            .ForMember(dto => dto.PotentialPayout,
+                       options => options.MapFrom(bet => bet.Amount * bet.OddsAtPlacement));
     }
 }
