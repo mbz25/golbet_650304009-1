@@ -11,7 +11,7 @@ namespace GolBet.Services.Interfaces;
 public interface IMatchService
 {
     /// <summary>Match board: all active matches ordered by date.</summary> 
-    Task<IEnumerable<MatchDto>> GetBoardAsync(MatchStatus? status = null, string ? filterTerm = null);
+    Task<IEnumerable<MatchDto>> GetBoardAsync(MatchStatus? status = null, string? filterTerm = null);
 
     Task<MatchDetailDto?> GetDetailAsync(int id);
 
@@ -20,4 +20,8 @@ public interface IMatchService
     Task CreateAsync(MatchFormDto dto);
     Task UpdateAsync(MatchFormDto dto);
     Task DeactivateAsync(int id);
+
+    // --- Métodos de ciclo de vida y resolución (Módulo 9) ---
+    Task StartMatchAsync(int id);
+    Task<ResolutionSummaryDto> CloseMatchAsync(MatchResultFormDto dto);
 }

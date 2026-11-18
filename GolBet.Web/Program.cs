@@ -12,6 +12,9 @@ using Microsoft.EntityFrameworkCore;
 
 // Configuración de cultura es-CO
 var culture = new CultureInfo("es-CO");
+culture.NumberFormat = (NumberFormatInfo)CultureInfo.InvariantCulture.NumberFormat.Clone();
+culture.NumberFormat.NumberGroupSeparator = "";
+
 CultureInfo.DefaultThreadCurrentCulture = culture;
 CultureInfo.DefaultThreadCurrentUICulture = culture;
 
