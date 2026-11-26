@@ -9,6 +9,7 @@ using GolBet.Services.Interfaces;
 using GolBet.Services.Mapping;
 using Microsoft.AspNetCore.Identity; // Nuevo para Identity
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 // Configuración de cultura es-CO
 var culture = new CultureInfo("es-CO");
@@ -19,6 +20,9 @@ CultureInfo.DefaultThreadCurrentCulture = culture;
 CultureInfo.DefaultThreadCurrentUICulture = culture;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, config) =>
+    config.ReadFrom.Configuration(context.Configuration));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -41,8 +45,8 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/Account/Login";           // Redirige al login si no está autenticado[cite: 8]
-    options.AccessDeniedPath = "/Account/AccessDenied";  // Redirige si no tiene el rol[cite: 8]
+    options.LoginPath = "/Account/Login";            // Redirige al login si no está autenticado
+    options.AccessDeniedPath = "/Account/AccessDenied";  // Redirige si no tiene el rol
 });
 
 // Open generic registration: one line, a repository for every entity
@@ -50,7 +54,7 @@ builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepositor
 
 // Specific repositories
 builder.Services.AddScoped<IMatchRepository, MatchRepository>();
-builder.Services.AddScoped<IBetRepository, BetRepository>(); // 👈 NUEVO: Registro del repositorio de apuestas[cite: 7, 10]
+builder.Services.AddScoped<IBetRepository, BetRepository>(); // 👈 NUEVO: Registro del repositorio de apuestas
 
 // AutoMapper: scans the assembly containing MappingProfile for all profiles
 builder.Services.AddAutoMapper(typeof(MappingProfile));
@@ -58,25 +62,29 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 // Business services
 builder.Services.AddScoped<IMatchService, MatchService>();
 builder.Services.AddScoped<ITeamService, TeamService>();
-builder.Services.AddScoped<IBetService, BetService>();       // 👈 NUEVO: Registro del servicio de apuestas[cite: 7]
+builder.Services.AddScoped<IBetService, BetService>();       // 👈 NUEVO: Registro del servicio de apuestas
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
-    app.UseExceptionHandler("/Home/Error");
+    app.UseExceptionHandler("/Error/General");
     app.UseHsts();
 }
+
+app.UseStatusCodePagesWithReExecute("/Error/{0}");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+app.UseSerilogRequestLogging();
+
 app.UseRouting();
 
 // ---- Pipeline de Autenticación y Autorización (¡El orden importa!) ----
-app.UseAuthentication();   // 1º: Identifica quién eres leyendo la cookie[cite: 8]
-app.UseAuthorization();    // 2º: Decide si tienes permisos según [Authorize][cite: 8]
+app.UseAuthentication();   // 1º: Identifica quién eres leyendo la cookie
+app.UseAuthorization();    // 2º: Decide si tienes permisos según [Authorize]
 
 app.MapControllerRoute(
     name: "default",
@@ -100,5 +108,3 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "Ocurrió un error al migrar o sembrar la base de datos.");
     }
 }
-
-app.Run();
